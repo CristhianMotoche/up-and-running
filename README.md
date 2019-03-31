@@ -4,7 +4,14 @@
 
 Install:
 
+- git
 - python
+
+Clone the repo:
+
+```
+git clone git@github.com:CristhianMotoche/up-and-running.git
+```
 
 
 ### Run playbook

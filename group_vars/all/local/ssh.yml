@@ -1,2 +1,4 @@
 ---
-ssh_user: 'root'
+user: 'root'
+ssh_user: '{{ user }}'
+dotfiles_user: '{{ user }}'

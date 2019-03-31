@@ -1,7 +1,7 @@
 ---
 - name: Create ssh directory
   file:
-    path: "/home/{{ ssh_user }}/.ssh/"
+    path: "$HOME/.ssh/"
     mode: 0700
     state: directory
     mode: 0644
@@ -11,7 +11,7 @@
   lineinfile:
     create: true
     state: present
-    path: "/home/{{ ssh_user }}/.ssh/{{ item.key }}.pub"
+    path: "$HOME/.ssh/{{ item.key }}.pub"
     mode: 0700
     owner: "{{ ssh_user }}"
     line: "{{ item.value }}"
@@ -21,7 +21,7 @@
   lineinfile:
     create: true
     state: present
-    path: "/home/{{ ssh_user }}/.ssh/{{ item.key }}"
+    path: "$HOME/.ssh/{{ item.key }}"
     mode: 0700
     owner: "{{ ssh_user }}"
     line: "{{ item.value }}"
