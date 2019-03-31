@@ -1,4 +1,17 @@
 # Set up and running
+## Usage
+### Requirements
+
+Install:
+
+- python
+
+
+### Run playbook
+
+```
+pipenv run ansible-playbook pc.yml -l real
+```
 
 ## Development
 ### Requirements
