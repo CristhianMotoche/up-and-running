@@ -1,0 +1,28 @@
+---
+- name: Create ssh directory
+  file:
+    path: "/home/{{ ssh_user }}/.ssh/"
+    mode: 0700
+    state: directory
+    mode: 0644
+    owner: "{{ ssh_user }}"
+
+- name: Copy public keys
+  lineinfile:
+    create: true
+    state: present
+    path: "/home/{{ ssh_user }}/.ssh/{{ item.key }}.pub"
+    mode: 0700
+    owner: "{{ ssh_user }}"
+    line: "{{ item.value }}"
+  with_items: "{{ ssh_public_keys }}"
+
+- name: Copy private keys
+  lineinfile:
+    create: true
+    state: present
+    path: "/home/{{ ssh_user }}/.ssh/{{ item.key }}"
+    mode: 0700
+    owner: "{{ ssh_user }}"
+    line: "{{ item.value }}"
+  with_items: "{{ ssh_private_keys }}"
