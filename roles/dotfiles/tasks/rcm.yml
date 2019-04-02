@@ -1,0 +1,17 @@
+---
+- name: Add an Apt signing key, uses whichever key is at the URL
+  apt_key:
+    url: https://apt.thoughtbot.com/thoughtbot.gpg.key
+    state: present
+
+- name: Add repository for rcm
+  apt_repository:
+    repo: "deb https://apt.thoughtbot.com/debian/ stable main"
+    state: present
+    validate_certs: no
+    update_cache: yes
+
+- name: Install rcm
+  apt:
+    package: rcm
+    state: present

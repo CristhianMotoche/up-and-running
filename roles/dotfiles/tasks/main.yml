@@ -1,12 +1,3 @@
 ---
-- name: Modify config to set StrictHostKeyChecking to no
-  lineinfile:
-    line: 'StrictHostKeyChecking=no'
-    create: true
-    path: '$HOME/.ssh/config'
-  when: inventory_hostname in groups['local']
-
-- name: Clone repo
-  git:
-    repo: 'git@github.com:CristhianMotoche/dotfiles.git'
-    dest: $HOME/.dotfiles
+- include_tasks: repo.yml
+- include_tasks: rcm.yml
