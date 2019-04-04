@@ -3,4 +3,7 @@
   roles:
     - bootstrap
     - ssh
+    - oh-my-zsh
     - dotfiles
+    - asdf
+    - tmux

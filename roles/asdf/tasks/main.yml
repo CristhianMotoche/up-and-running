@@ -1,0 +1,5 @@
+---
+- name: Install asdf from Git
+  git:
+    repo: https://github.com/asdf-vm/asdf.git
+    dest: $HOME/.asdf/

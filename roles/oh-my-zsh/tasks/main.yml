@@ -1,0 +1,9 @@
+---
+- name: Install oh-my-zsh
+  uri:
+    url: https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+    method: GET
+    dest: /tmp/install.sh
+
+- name: Run script
+  shell: /bin/sh /tmp/install.sh
