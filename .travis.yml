@@ -10,4 +10,4 @@ services:
 script:
   - pip install pipenv
   - pipenv install
-  - molecule test
+  - pipenv run molecule test
