@@ -6,5 +6,6 @@ services:
   - docker
 
 script:
+  - pip install pipenv
   - pipenv install
   - molecule test
