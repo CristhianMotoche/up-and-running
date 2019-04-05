@@ -52,3 +52,9 @@ Test connection:
 ```
 ansible local -m ping
 ```
+
+## Test
+
+```
+molecule test
+```
