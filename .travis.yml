@@ -1,0 +1,10 @@
+---
+sudo: required
+language: python
+
+services:
+  - docker
+
+script:
+  - pipenv install
+  - molecule test
